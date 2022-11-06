@@ -3,6 +3,8 @@
 import 'package:afnus_diary/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/todo_item.dart';
+
 class AfnusDiary extends StatefulWidget {
   const AfnusDiary({super.key});
 
@@ -33,7 +35,13 @@ class _AfnusDiaryState extends State<AfnusDiary> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                    )
+                    ),
+                    TodoItems(),
+                    TodoItems(),
+                    TodoItems(),
+                    TodoItems(),
+                    TodoItems(),
+                    TodoItems(),
                   ],
                 ),
               )
