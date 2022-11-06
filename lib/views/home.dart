@@ -46,6 +46,8 @@ class _AfnusDiaryState extends State<AfnusDiary> {
                         for (ToDo todo in todosList)
                           TodoItems(
                             todo: todo,
+                            onToDoChanged: _handleToDoChange,
+                            onDeleteItem: _deleteToDoItem,
                           ),
                       ],
                     ),
@@ -100,6 +102,18 @@ class _AfnusDiaryState extends State<AfnusDiary> {
         ],
       ),
     );
+  }
+
+  void _handleToDoChange(ToDo todo) {
+    setState(() {
+      todo.isDone = !todo.isDone;
+    });
+  }
+
+  void _deleteToDoItem(String id) {
+    setState(() {
+      todosList.removeWhere((item) => item.id == id);
+    });
   }
 
   AppBar _buildAppBar() {
